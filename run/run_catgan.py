@@ -35,7 +35,7 @@ scriptname = 'main.py'
 # EvoGAN: General text generation model
 if_test = int(False)
 run_model = ['catgan', 'catgan', 'catgan', 'evogan', 'evogan', 'evogan']
-k_label = 2
+k_label = 4
 CUDA = int(True)
 ora_pretrain = int(True)
 gen_pretrain = int(False)
@@ -47,7 +47,7 @@ tips = '{} experiments'
 
 # ===Oracle or Real===
 if_real_data = [int(False), int(True), int(True), int(False), int(True), int(True)]
-dataset = ['oracle', 'mr15', 'amazon_app_book', 'oracle', 'image_coco', 'emnlp_news']
+dataset = ['oracle', 'forms', 'amazon_app_book', 'oracle', 'image_coco', 'emnlp_news']
 vocab_size = [5000, 0, 0, 5000, 0, 0]
 
 # ===CatGAN Param===
