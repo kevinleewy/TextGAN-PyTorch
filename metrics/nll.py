@@ -30,7 +30,7 @@ class NLL(Metrics):
         """note that NLL score need the updated model and data loader each time, use reset() before get_score()"""
         if not self.if_use:
             return 0
-        assert self.model and self.data_loader, 'Need to reset() before get_score()! {} {} {} {} {}'.format(self.data_loader, not not self.data_loader, len(self.data_loader.loader), self.data_loader.input, self.data_loader.target)
+        assert self.model and self.data_loader, 'Need to reset() before get_score()! {} {} {} {} {}'.format(self.name, self.data_loader, not not self.data_loader, self.label_i, self.data_loader.__dict__)
 
         if self.leak_dis is not None:  # For LeakGAN
             return self.cal_nll_with_leak_dis(self.model, self.data_loader, self.leak_dis, self.gpu)
