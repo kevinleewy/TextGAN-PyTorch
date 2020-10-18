@@ -31,8 +31,7 @@ class NLL(Metrics):
         if not self.if_use:
             return 0
 
-        for i in range(len(self.data_loader)):
-            print(self.data_loader[i])
+        print(next(iter(self.data_loader)))
 
         assert self.model and self.data_loader, 'Need to reset() before get_score()! {} {} {} {} {}'.format(self.name, self.data_loader, not not self.data_loader, self.label_i, len(self.data_loader))
 
