@@ -41,7 +41,7 @@ ora_pretrain = int(True)
 gen_pretrain = int(False)
 dis_pretrain = int(False)
 MLE_train_epoch = 150
-clas_pre_epoch = 5
+clas_pre_epoch = 20
 ADV_train_epoch = 2000
 tips = '{} experiments'
 
