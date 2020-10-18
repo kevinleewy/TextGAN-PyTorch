@@ -44,6 +44,8 @@ class GenDataIter:
         self.input = self._all_data_('input')
         self.target = self._all_data_('target')
 
+        print('[GenDataIter] {} strings loaded into DataLoader'.format(len(self)))
+
     def __read_data__(self, samples):
         """
         input: same as target, but start with start_letter.
@@ -81,6 +83,7 @@ class GenDataIter:
 
     def load_data(self, filename):
         """Load real data from local file"""
+        print('[GenDataIter] Loading data from {}'.format(filename))
         self.tokens = get_tokenlized(filename)
         samples_index = tokens_to_tensor(self.tokens, self.word2idx_dict)
         return self.prepare(samples_index)
