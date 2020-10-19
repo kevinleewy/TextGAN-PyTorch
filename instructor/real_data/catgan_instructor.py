@@ -145,6 +145,7 @@ class CatGANInstructor(BasicInstructor):
 
             # ===Test===
             if epoch % cfg.pre_log_step == 0 or epoch == epochs - 1:
+                print('[CatGanInstructor] {}'.format(epoch))
                 self.log.info(
                     '[MLE-GEN] epoch %d : pre_loss = %.4f, %s' % (
                         epoch, pre_loss, self.comb_metrics(fmt_str=True)))
