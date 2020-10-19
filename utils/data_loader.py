@@ -44,8 +44,6 @@ class GenDataIter:
         self.input = self._all_data_('input')
         self.target = self._all_data_('target')
 
-        print('[GenDataIter] {} strings loaded into DataLoader'.format(len(self.loader)))
-
     def __read_data__(self, samples):
         """
         input: same as target, but start with start_letter.
