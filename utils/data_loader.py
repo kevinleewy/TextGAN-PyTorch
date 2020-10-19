@@ -43,7 +43,7 @@ class GenDataIter:
 
         allData = self.__read_data__(samples)
 
-        print('[GenDataIter] {} strings loaded into allData'.format(len(allData)))
+        print('[GenDataIter] {} strings loaded into allData from {}'.format(len(allData), samples))
 
         dataset = GANDataset(allData)
 
