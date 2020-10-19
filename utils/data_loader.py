@@ -35,8 +35,22 @@ class GenDataIter:
         if if_test_data:  # used for the classifier
             self.word2idx_dict, self.idx2word_dict = load_test_dict(cfg.dataset)
 
+        # self.loader = DataLoader(
+        #     dataset=GANDataset(self.__read_data__(samples)),
+        #     batch_size=self.batch_size,
+        #     shuffle=self.shuffle,
+        #     drop_last=True)
+
+        allData = self.__read_data__(samples)
+
+        print('[GenDataIter] {} strings loaded into allData'.format(len(allData)))
+
+        dataset = GANDataset(allData)
+
+        print('[GenDataIter] {} strings loaded into GANDataset'.format(len(dataset)))
+
         self.loader = DataLoader(
-            dataset=GANDataset(self.__read_data__(samples)),
+            dataset=dataset,
             batch_size=self.batch_size,
             shuffle=self.shuffle,
             drop_last=True)
