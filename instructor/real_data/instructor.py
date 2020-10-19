@@ -41,6 +41,7 @@ class BasicInstructor:
             self.train_data = GenDataIter(cfg.train_data)
             self.test_data = GenDataIter(cfg.test_data, if_test_data=True)
         except:
+            print('[BasicInstructor] Failed to load GenDataIter from {} or {}'.format(cfg.train_data, cfg.test_data))
             pass
 
         try:
@@ -53,6 +54,7 @@ class BasicInstructor:
             self.train_samples_list = [self.train_data_list[i].target for i in range(cfg.k_label)]
             self.clas_samples_list = [self.clas_data_list[i].target for i in range(cfg.k_label)]
         except:
+            print('[BasicInstructor] Failed to load GenDataIter from {} or {}'.format(cfg.cat_train_data, cfg.cat_test_data))
             pass
 
         # Criterion
