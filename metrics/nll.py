@@ -31,8 +31,6 @@ class NLL(Metrics):
         if not self.if_use:
             return 0
 
-        print('[NLL] {} {} {} {} {}'.format(self.name, self.data_loader, not not self.data_loader, self.label_i, len(self.data_loader)))
-
         assert self.model and self.data_loader, 'Need to reset() before get_score()!'
 
         if self.leak_dis is not None:  # For LeakGAN
